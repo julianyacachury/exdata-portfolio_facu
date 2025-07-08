@@ -10,14 +10,13 @@ interface ServiceCardProps {
 export default function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
     <Card className="border-none shadow-lg transition-all duration-300 hover:shadow-xl h-full flex flex-col">
-      <CardHeader className="flex-shrink-0">
+      <CardHeader className="pb-2">
         <div className="mb-4">{icon}</div>
         <CardTitle className="text-xl">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="flex-grow flex flex-col justify-between">
-        <CardDescription className="text-base">{description}</CardDescription>
+      <CardContent className="flex-grow">
+        <CardDescription className="text-slate-600">{description}</CardDescription>
       </CardContent>
     </Card>
   )
 }
-

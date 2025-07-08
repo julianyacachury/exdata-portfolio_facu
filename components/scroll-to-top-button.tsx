@@ -1,17 +1,15 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ChevronUp } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { ArrowUp } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
-export default function ScrollToTopButton() {
+export function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false)
 
-  // Show button when page is scrolled down
   useEffect(() => {
     const toggleVisibility = () => {
-      // Show the button after scrolling down 300px
-      if (window.scrollY > 300) {
+      if (window.pageYOffset > 300) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
@@ -20,11 +18,9 @@ export default function ScrollToTopButton() {
 
     window.addEventListener("scroll", toggleVisibility)
 
-    // Clean up the event listener on component unmount
     return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
 
-  // Scroll to top with smooth behavior
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -32,22 +28,17 @@ export default function ScrollToTopButton() {
     })
   }
 
+  if (!isVisible) {
+    return null
+  }
+
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.2 }}
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue shadow-lg transition-colors hover:bg-brand-blue-light focus:outline-none focus:ring-2 focus:ring-brand-mint focus:ring-offset-2 md:bottom-8 md:right-8"
-          aria-label="Scroll to top"
-        >
-          <ChevronUp className="h-6 w-6 text-white" />
-        </motion.button>
-      )}
-    </AnimatePresence>
+    <Button
+      className="fixed bottom-4 right-4 z-50 h-10 w-10 rounded-full bg-brand-blue p-0 shadow-lg hover:bg-brand-blue-light"
+      onClick={scrollToTop}
+      aria-label="Scroll to top"
+    >
+      <ArrowUp className="h-4 w-4 text-white" />
+    </Button>
   )
 }
-
