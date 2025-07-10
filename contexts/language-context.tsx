@@ -34,32 +34,41 @@ const translations = {
       "Discover how we've helped businesses transform their operations with data-driven solutions",
     "home.projects.button": "View All Projects",
     "home.projects.button2": "Our Technologies",
+    "home.about.title": "About Exdata",
+    "home.about.description1":
+      "Founded by physicists and data scientists, Exdata bridges the gap between theoretical knowledge and practical applications.",
+    "home.about.description2":
+      "Our unique approach combines rigorous scientific methodology with innovative AI techniques to deliver solutions that are both robust and scalable.",
 
     // About page
     "about.hero.title": "About Exdata",
     "about.hero.description1":
-      "We are a team of physicists and data scientists passionate about transforming complex data into actionable insights.",
+      "Founded by physicists and data scientists, we bridge the gap between theoretical knowledge and practical applications.",
     "about.hero.description2":
-      "Our unique approach combines rigorous scientific methodology with cutting-edge AI technologies to deliver solutions that drive real business value.",
+      "Our unique approach combines rigorous scientific methodology with innovative AI techniques.",
     "about.mission.title": "Our Mission",
     "about.mission.description":
-      "To bridge the gap between complex data and practical solutions, empowering businesses to make informed decisions through advanced analytics and AI.",
+      "To democratize advanced analytics and AI, making sophisticated data science accessible to organizations of all sizes.",
     "about.vision.title": "Our Vision",
     "about.vision.description":
-      "To be the leading provider of physics-informed AI solutions, setting new standards for precision and innovation in data science.",
+      "A world where data-driven insights power every decision, creating more efficient, sustainable, and innovative solutions.",
     "about.values.title": "Our Values",
-    "about.values.precision": "Precision",
-    "about.values.precision.desc": "We apply scientific rigor to every analysis",
+    "about.values.scientific": "Scientific Rigor",
+    "about.values.scientific.desc": "Every solution is built on solid theoretical foundations",
     "about.values.innovation": "Innovation",
-    "about.values.innovation.desc": "We push the boundaries of what's possible with data",
+    "about.values.innovation.desc": "Pushing boundaries with cutting-edge AI and machine learning",
     "about.values.collaboration": "Collaboration",
-    "about.values.collaboration.desc": "We work closely with our clients to understand their unique challenges",
+    "about.values.collaboration.desc": "Working closely with clients to understand their unique challenges",
 
     // Services
     "service.analytics": "Advanced Analytics",
+    "service.analytics.desc": "Transform raw data into actionable insights with our comprehensive analytics solutions.",
     "service.dataStrategy": "Data Strategy",
+    "service.dataStrategy.desc": "Develop a roadmap for your data initiatives with our strategic consulting services.",
     "service.predictive": "Predictive Modeling",
+    "service.predictive.desc": "Forecast trends and outcomes with sophisticated machine learning models.",
     "service.ai": "AI Solutions",
+    "service.ai.desc": "Custom artificial intelligence solutions tailored to your specific business needs.",
 
     // Footer
     "footer.description": "Transforming data into intelligent solutions through physics-powered AI.",
@@ -70,6 +79,23 @@ const translations = {
     "footer.contact": "Contact",
     "footer.services": "Services",
     "footer.copyright": "All rights reserved.",
+
+    // Contact
+    "contact.title": "Get In Touch",
+    "contact.subtitle": "Ready to transform your data into intelligent solutions?",
+    "contact.name": "Name",
+    "contact.email": "Email",
+    "contact.company": "Company",
+    "contact.message": "Message",
+    "contact.send": "Send Message",
+
+    // Team
+    "team.title": "Meet Our Team",
+    "team.subtitle": "The brilliant minds behind Exdata's innovative solutions",
+
+    // Technologies
+    "technologies.title": "Our Technology Stack",
+    "technologies.subtitle": "Cutting-edge tools and frameworks powering our solutions",
   },
   es: {
     // Navigation
@@ -95,36 +121,47 @@ const translations = {
       "Descubre cómo hemos ayudado a las empresas a transformar sus operaciones con soluciones basadas en datos",
     "home.projects.button": "Ver Todos los Proyectos",
     "home.projects.button2": "Nuestras Tecnologías",
+    "home.about.title": "Acerca de Exdata",
+    "home.about.description1":
+      "Fundada por físicos y científicos de datos, Exdata conecta el conocimiento teórico con aplicaciones prácticas.",
+    "home.about.description2":
+      "Nuestro enfoque único combina metodología científica rigurosa con técnicas innovadoras de IA para entregar soluciones robustas y escalables.",
 
     // About page
     "about.hero.title": "Acerca de Exdata",
     "about.hero.description1":
-      "Somos un equipo de físicos y científicos de datos apasionados por transformar datos complejos en insights accionables.",
+      "Fundada por físicos y científicos de datos, conectamos el conocimiento teórico con aplicaciones prácticas.",
     "about.hero.description2":
-      "Nuestro enfoque único combina metodología científica rigurosa con tecnologías de IA de vanguardia para entregar soluciones que generan valor real para el negocio.",
+      "Nuestro enfoque único combina metodología científica rigurosa con técnicas innovadoras de IA.",
     "about.mission.title": "Nuestra Misión",
     "about.mission.description":
-      "Cerrar la brecha entre datos complejos y soluciones prácticas, empoderando a las empresas para tomar decisiones informadas a través de análisis avanzados e IA.",
+      "Democratizar la analítica avanzada y la IA, haciendo la ciencia de datos sofisticada accesible a organizaciones de todos los tamaños.",
     "about.vision.title": "Nuestra Visión",
     "about.vision.description":
-      "Ser el proveedor líder de soluciones de IA informadas por la física, estableciendo nuevos estándares de precisión e innovación en ciencia de datos.",
+      "Un mundo donde los insights basados en datos impulsen cada decisión, creando soluciones más eficientes, sostenibles e innovadoras.",
     "about.values.title": "Nuestros Valores",
-    "about.values.precision": "Precisión",
-    "about.values.precision.desc": "Aplicamos rigor científico a cada análisis",
+    "about.values.scientific": "Rigor Científico",
+    "about.values.scientific.desc": "Cada solución se construye sobre fundamentos teóricos sólidos",
     "about.values.innovation": "Innovación",
-    "about.values.innovation.desc": "Empujamos los límites de lo que es posible con los datos",
+    "about.values.innovation.desc": "Empujando límites con IA y aprendizaje automático de vanguardia",
     "about.values.collaboration": "Colaboración",
-    "about.values.collaboration.desc":
-      "Trabajamos estrechamente con nuestros clientes para entender sus desafíos únicos",
+    "about.values.collaboration.desc": "Trabajando estrechamente con clientes para entender sus desafíos únicos",
 
     // Services
-    "service.analytics": "Análisis Avanzado",
+    "service.analytics": "Analítica Avanzada",
+    "service.analytics.desc":
+      "Transforma datos en bruto en insights accionables con nuestras soluciones analíticas integrales.",
     "service.dataStrategy": "Estrategia de Datos",
+    "service.dataStrategy.desc":
+      "Desarrolla una hoja de ruta para tus iniciativas de datos con nuestros servicios de consultoría estratégica.",
     "service.predictive": "Modelado Predictivo",
+    "service.predictive.desc": "Pronostica tendencias y resultados con modelos sofisticados de aprendizaje automático.",
     "service.ai": "Soluciones de IA",
+    "service.ai.desc":
+      "Soluciones de inteligencia artificial personalizadas adaptadas a las necesidades específicas de tu negocio.",
 
     // Footer
-    "footer.description": "Transformando datos en soluciones inteligentes a través de IA potenciada por la física.",
+    "footer.description": "Transformando datos en soluciones inteligentes a través de IA impulsada por física.",
     "footer.company": "Empresa",
     "footer.aboutUs": "Acerca de Nosotros",
     "footer.ourTeam": "Nuestro Equipo",
@@ -132,6 +169,23 @@ const translations = {
     "footer.contact": "Contacto",
     "footer.services": "Servicios",
     "footer.copyright": "Todos los derechos reservados.",
+
+    // Contact
+    "contact.title": "Ponte en Contacto",
+    "contact.subtitle": "¿Listo para transformar tus datos en soluciones inteligentes?",
+    "contact.name": "Nombre",
+    "contact.email": "Correo",
+    "contact.company": "Empresa",
+    "contact.message": "Mensaje",
+    "contact.send": "Enviar Mensaje",
+
+    // Team
+    "team.title": "Conoce Nuestro Equipo",
+    "team.subtitle": "Las mentes brillantes detrás de las soluciones innovadoras de Exdata",
+
+    // Technologies
+    "technologies.title": "Nuestro Stack Tecnológico",
+    "technologies.subtitle": "Herramientas y frameworks de vanguardia que impulsan nuestras soluciones",
   },
 }
 

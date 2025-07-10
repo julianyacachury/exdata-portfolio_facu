@@ -32,11 +32,11 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        {/* Logo - Properly sized for header */}
+        {/* Logo - Using correct filename with spaces */}
         <Link href="/" className="flex items-center">
           <div className="relative h-8 w-auto">
             <Image
-              src="/logo.png"
+              src="/Logo Exdata.png"
               alt="Exdata Logo"
               width={120}
               height={32}
@@ -99,10 +99,10 @@ function Footer() {
         <div className="grid gap-8 md:grid-cols-4">
           <div>
             <div className="flex items-center mb-4">
-              {/* Logo in Footer - slightly larger */}
+              {/* Logo in Footer - using correct filename */}
               <div className="relative h-10 w-auto">
                 <Image
-                  src="/logo.png"
+                  src="/Logo Exdata.png"
                   alt="Exdata Logo"
                   width={150}
                   height={40}

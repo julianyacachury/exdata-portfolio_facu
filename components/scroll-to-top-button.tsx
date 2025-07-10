@@ -33,9 +33,15 @@ export function ScrollToTopButton() {
   }
 
   return (
-    <Button className="fixed bottom-4 right-4 z-50 h-12 w-12 rounded-full shadow-lg" onClick={scrollToTop} size="icon">
+    <Button
+      className="fixed bottom-4 right-4 z-50 h-12 w-12 rounded-full shadow-lg"
+      onClick={scrollToTop}
+      size="icon"
+      aria-label="Scroll to top"
+    >
       <ArrowUp className="h-4 w-4" />
-      <span className="sr-only">Scroll to top</span>
     </Button>
   )
 }
+
+export default ScrollToTopButton
