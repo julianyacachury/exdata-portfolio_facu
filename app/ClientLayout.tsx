@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import Image from "next/image"
 import { Inter } from "next/font/google"
 import Link from "next/link"
 import { useState } from "react"
@@ -32,9 +32,18 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded bg-brand-blue"></div>
-          <span className="text-xl font-bold">Exdata</span>
+        {/* Logo - Properly sized for header */}
+        <Link href="/" className="flex items-center">
+          <div className="relative h-8 w-auto">
+            <Image
+              src="/logo.png"
+              alt="Exdata Logo"
+              width={120}
+              height={32}
+              className="h-8 w-auto object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -89,11 +98,19 @@ function Footer() {
       <div className="container mx-auto px-4 py-12 md:px-6">
         <div className="grid gap-8 md:grid-cols-4">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="h-8 w-8 rounded bg-brand-mint"></div>
-              <span className="text-xl font-bold">Exdata</span>
+            <div className="flex items-center mb-4">
+              {/* Logo in Footer - slightly larger */}
+              <div className="relative h-10 w-auto">
+                <Image
+                  src="/logo.png"
+                  alt="Exdata Logo"
+                  width={150}
+                  height={40}
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                />
+              </div>
             </div>
-            <p className="text-slate-400">Transforming data into intelligent solutions through physics-powered AI.</p>
+            <p className="text-slate-400">{t("footer.description")}</p>
           </div>
 
           <div>
@@ -101,29 +118,29 @@ function Footer() {
             <ul className="space-y-2 text-slate-400">
               <li>
                 <Link href="/services" className="hover:text-white transition-colors">
-                  Advanced Analytics
+                  {t("service.analytics")}
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="hover:text-white transition-colors">
-                  Data Strategy
+                  {t("service.dataStrategy")}
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="hover:text-white transition-colors">
-                  Predictive Modeling
+                  {t("service.predictive")}
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="hover:text-white transition-colors">
-                  AI Solutions
+                  {t("service.ai")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
+            <h3 className="font-semibold mb-4">{t("footer.company")}</h3>
             <ul className="space-y-2 text-slate-400">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
@@ -159,7 +176,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
-          <p>&copy; 2024 Exdata. All rights reserved.</p>
+          <p>&copy; 2024 Exdata. {t("footer.copyright")}</p>
         </div>
       </div>
     </footer>

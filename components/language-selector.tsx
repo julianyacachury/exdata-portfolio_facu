@@ -17,11 +17,11 @@ export function LanguageSelector() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setLanguage("en")} className={language === "en" ? "bg-accent" : ""}>
-          English
+        <DropdownMenuItem onClick={() => setLanguage("en")}>
+          <span className={language === "en" ? "font-semibold" : ""}>English</span>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage("es")} className={language === "es" ? "bg-accent" : ""}>
-          Español
+        <DropdownMenuItem onClick={() => setLanguage("es")}>
+          <span className={language === "es" ? "font-semibold" : ""}>Español</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
