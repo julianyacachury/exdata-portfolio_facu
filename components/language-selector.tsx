@@ -27,5 +27,3 @@ export function LanguageSelector() {
     </DropdownMenu>
   )
 }
-
-export default LanguageSelector
