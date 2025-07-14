@@ -30,7 +30,7 @@ export default function ProjectsPage() {
 
   // Dynamically generate categories from projects
   const allCategories = translatedProjects.map((project) => project.category)
-  const uniqueCategories = [t("projects.filter.all"), ...new Set(allCategories)].sort()
+  const uniqueCategories = [t("projects.filter.all"), ...Array.from(new Set(allCategories))].sort()
 
   // State for the selected category
   const [selectedCategory, setSelectedCategory] = useState(t("projects.filter.all"))
