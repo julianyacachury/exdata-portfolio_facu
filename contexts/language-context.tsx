@@ -1,46 +1,277 @@
 "use client"
 
-import type React from "react"
-import { createContext, useContext, useState, useEffect } from "react"
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react"
 
-// Translation data
-const translations = {
+type Language = "en" | "es"
+
+interface LanguageContextType {
+  language: Language
+  setLanguage: (language: Language) => void
+  t: (key: string) => string
+}
+
+// Define the translation keys type
+type TranslationKeys = {
+  // Navigation
+  "nav.home": string
+  "nav.about": string
+  "nav.services": string
+  "nav.projects": string
+  "nav.technologies": string
+  "nav.team": string
+  "nav.contact": string
+
+  // Home page
+  "home.hero.title": string
+  "home.hero.subtitle": string
+  "home.hero.description": string
+  "home.services.title": string
+  "home.services.description": string
+  "home.services.button": string
+  "home.projects.title": string
+  "home.projects.description": string
+  "home.projects.button1": string
+  "home.projects.button2": string
+  "home.about.title": string
+  "home.about.description1": string
+  "home.about.description2": string
+  "home.about.button": string
+  "home.cta.title": string
+  "home.cta.description": string
+  "home.cta.button": string
+
+  // About page
+  "about.hero.title": string
+  "about.hero.description1": string
+  "about.hero.description2": string
+  "about.story.title": string
+  "about.story.description1": string
+  "about.story.description2": string
+  "about.story.description3": string
+  "about.story.description4": string
+  "about.values.title": string
+  "about.values.description": string
+  "about.values.analytical": string
+  "about.values.analytical.description": string
+  "about.values.ethical": string
+  "about.values.ethical.description": string
+  "about.values.learning": string
+  "about.values.learning.description": string
+  "about.team.title": string
+  "about.team.description": string
+  "about.team.button": string
+
+  // Services page
+  "services.hero.title": string
+  "services.hero.description1": string
+  "services.hero.description2": string
+  "services.offer.title": string
+  "services.offer.description": string
+  "services.analytics.title": string
+  "services.analytics.description": string
+  "services.analytics.details": string
+  "services.dataStrategy.title": string
+  "services.dataStrategy.description": string
+  "services.dataStrategy.details": string
+  "services.predictive.title": string
+  "services.predictive.description": string
+  "services.predictive.details": string
+  "services.bi.title": string
+  "services.bi.description": string
+  "services.bi.details": string
+  "services.ai.title": string
+  "services.ai.description": string
+  "services.ai.details": string
+  "services.consulting.title": string
+  "services.consulting.description": string
+  "services.consulting.details": string
+  "services.approach.title": string
+  "services.approach.description": string
+  "services.approach.step1": string
+  "services.approach.step1.description": string
+  "services.approach.step2": string
+  "services.approach.step2.description": string
+  "services.approach.step3": string
+  "services.approach.step3.description": string
+  "services.approach.step4": string
+  "services.approach.step4.description": string
+  "services.approach.step5": string
+  "services.approach.step5.description": string
+  "services.cta.title": string
+  "services.cta.description": string
+  "services.cta.button": string
+
+  // Projects page
+  "projects.hero.title": string
+  "projects.hero.description1": string
+  "projects.hero.description2": string
+  "projects.filter.all": string
+  "projects.cta.title": string
+  "projects.cta.description": string
+  "projects.cta.button1": string
+  "projects.cta.button2": string
+
+  // Project details
+  "projects.roof.title": string
+  "projects.roof.category": string
+  "projects.roof.description": string
+  "projects.roof.challenge": string
+  "projects.roof.solution": string
+  "projects.roof.results": string
+  "projects.pharma.title": string
+  "projects.pharma.category": string
+  "projects.pharma.description": string
+  "projects.pharma.challenge": string
+  "projects.pharma.solution": string
+  "projects.pharma.results": string
+
+  // Technologies page
+  "tech.hero.title": string
+  "tech.hero.description": string
+  "tech.languages.title": string
+  "tech.ai.title": string
+  "tech.ml.title": string
+  "tech.deployment.title": string
+  "tech.expertise.title": string
+  "tech.expertise.description": string
+  "tech.expertise.ai.title": string
+  "tech.expertise.ai.description": string
+  "tech.expertise.cv.title": string
+  "tech.expertise.cv.description": string
+  "tech.expertise.api.title": string
+  "tech.expertise.api.description": string
+  "tech.expertise.mlops.title": string
+  "tech.expertise.mlops.description": string
+
+  // Technology descriptions
+  "tech.python.description": string
+  "tech.fastapi.description": string
+  "tech.flask.description": string
+  "tech.langchain.description": string
+  "tech.pydantic.description": string
+  "tech.openai.description": string
+  "tech.anthropic.description": string
+  "tech.multivendor.description": string
+  "tech.sklearn.description": string
+  "tech.tensorflow.description": string
+  "tech.pytorch.description": string
+  "tech.docker.description": string
+  "tech.aws.description": string
+  "tech.azure.description": string
+  "tech.databases.description": string
+  "tech.redis.description": string
+
+  // Team page
+  "team.hero.title": string
+  "team.hero.description": string
+  "team.expertise": string
+  "team.join.title": string
+  "team.join.description": string
+
+  // Team member profiles
+  "team.facundo.role": string
+  "team.facundo.bio": string
+  "team.facundo.expertise.1": string
+  "team.facundo.expertise.2": string
+  "team.facundo.expertise.3": string
+  "team.facundo.expertise.4": string
+  "team.agustin.role": string
+  "team.agustin.bio": string
+  "team.agustin.expertise.1": string
+  "team.agustin.expertise.2": string
+  "team.agustin.expertise.3": string
+  "team.agustin.expertise.4": string
+  "team.emiliano.role": string
+  "team.emiliano.bio": string
+  "team.emiliano.expertise.1": string
+  "team.emiliano.expertise.2": string
+  "team.emiliano.expertise.3": string
+  "team.andres.role": string
+  "team.andres.bio": string
+  "team.andres.expertise.1": string
+  "team.andres.expertise.2": string
+  "team.andres.expertise.3": string
+
+  // Contact page
+  "contact.hero.title": string
+  "contact.hero.description": string
+  "contact.form.title": string
+  "contact.form.firstName": string
+  "contact.form.lastName": string
+  "contact.form.email": string
+  "contact.form.company": string
+  "contact.form.subject": string
+  "contact.form.message": string
+  "contact.form.button": string
+  "contact.info.title": string
+  "contact.info.location": string
+  "contact.info.email": string
+  "contact.info.call": string
+  "contact.info.hours": string
+  "contact.info.mapAlt": string
+  "contact.faq.title": string
+  "contact.faq.q1": string
+  "contact.faq.a1": string
+  "contact.faq.q2": string
+  "contact.faq.a2": string
+  "contact.faq.q3": string
+  "contact.faq.a3": string
+  "contact.faq.q4": string
+  "contact.faq.a4": string
+  "contact.faq.q5": string
+  "contact.faq.a5": string
+
+  // Footer
+  "footer.description": string
+  "footer.company": string
+  "footer.aboutUs": string
+  "footer.ourTeam": string
+  "footer.careers": string
+  "footer.contact": string
+  "footer.services": string
+  "footer.copyright": string
+
+  // Service names
+  "service.analytics": string
+  "service.dataStrategy": string
+  "service.predictive": string
+}
+
+// Translations
+const translations: Record<Language, TranslationKeys> = {
   en: {
     // Navigation
     "nav.home": "Home",
     "nav.about": "About",
     "nav.services": "Services",
     "nav.projects": "Projects",
-    "nav.team": "Team",
     "nav.technologies": "Technologies",
-    "nav.contact": "Contact",
+    "nav.team": "Team",
+    "nav.contact": "Contact Us",
 
     // Home page
-    "home.hero.title": "Transform Your Data Into",
-    "home.hero.subtitle": "Intelligent Solutions",
+    "home.hero.title": "Advanced Analytics &",
+    "home.hero.subtitle": "Problem-Solving Expertise",
     "home.hero.description":
-      "We combine deep expertise in physics with cutting-edge AI to solve complex problems and drive innovation across industries.",
-
-    "home.services.title": "Our Core Services",
-    "home.services.description": "Comprehensive data science and AI solutions tailored to your business needs",
+      "Exdata combines deep analytical expertise with cutting-edge AI to solve complex problems and drive innovation across industries.",
+    "home.services.title": "Our Services",
+    "home.services.description": "Leveraging our expertise in science and AI to deliver innovative solutions.",
     "home.services.button": "View All Services",
-
     "home.projects.title": "Featured Projects",
     "home.projects.description":
-      "Discover how we've helped businesses transform their operations with data-driven solutions",
+      "Explore our recent work and discover how we've helped organizations solve complex problems.",
     "home.projects.button1": "View All Projects",
-    "home.projects.button2": "Our Technologies",
-
+    "home.projects.button2": "Explore Our Tech Stack",
     "home.about.title": "About Exdata",
     "home.about.description1":
-      "We are a team of physicists and data scientists passionate about solving complex problems through innovative AI solutions.",
+      "Founded by a team of experts with a passion for solving complex problems, Exdata specializes in advanced analytics and AI-driven solutions that transform how organizations approach challenges.",
     "home.about.description2":
-      "Our unique background in physics gives us a deep understanding of mathematical modeling and statistical analysis, enabling us to tackle challenges that others might find insurmountable.",
+      "Our unique approach combines rigorous analytical methodology with cutting-edge AI techniques to deliver solutions that are both innovative and reliable.",
     "home.about.button": "Learn More About Us",
-
-    "home.cta.title": "Ready to Transform Your Business?",
-    "home.cta.description": "Let's discuss how our AI and data science expertise can drive your business forward.",
-    "home.cta.button": "Get Started Today",
+    "home.cta.title": "Ready to transform your data?",
+    "home.cta.description":
+      "Let's discuss how our analytical expertise and AI solutions can help you solve complex problems and drive innovation.",
+    "home.cta.button": "Get in Touch",
 
     // About page
     "about.hero.title": "About Exdata",
@@ -308,38 +539,34 @@ const translations = {
     "nav.about": "Nosotros",
     "nav.services": "Servicios",
     "nav.projects": "Proyectos",
-    "nav.team": "Equipo",
     "nav.technologies": "Tecnologías",
+    "nav.team": "Equipo",
     "nav.contact": "Contáctanos",
 
     // Home page
-    "home.hero.title": "Transforma Tus Datos En",
-    "home.hero.subtitle": "Soluciones Inteligentes",
+    "home.hero.title": "Analítica avanzada &",
+    "home.hero.subtitle": "Resolución de problemas",
     "home.hero.description":
-      "Combinamos profunda experiencia en física con IA de vanguardia para resolver problemas complejos e impulsar la innovación en todas las industrias.",
-
-    "home.services.title": "Nuestros Servicios Principales",
+      "Exdata combina experiencia analítica profunda con IA de vanguardia para resolver problemas complejos e impulsar la innovación en todas las industrias.",
+    "home.services.title": "Servicios",
     "home.services.description":
-      "Soluciones integrales de ciencia de datos e IA adaptadas a las necesidades de tu negocio",
-    "home.services.button": "Ver Todos los Servicios",
-
-    "home.projects.title": "Proyectos Destacados",
+      "Aprovechando nuestra experiencia en ciencia e IA para ofrecer soluciones innovadoras.",
+    "home.services.button": "Todos los servicios",
+    "home.projects.title": "Proyectos destacados",
     "home.projects.description":
-      "Descubre cómo hemos ayudado a las empresas a transformar sus operaciones con soluciones basadas en datos",
-    "home.projects.button1": "Ver Todos los Proyectos",
-    "home.projects.button2": "Nuestras Tecnologías",
-
-    "home.about.title": "Acerca de Exdata",
+      "Explora nuestro trabajo reciente y descubre cómo hemos ayudado a organizaciones a resolver problemas complejos.",
+    "home.projects.button1": "Todos los proyectos",
+    "home.projects.button2": "Explorar nuestra tecnología",
+    "home.about.title": "Sobre Exdata",
     "home.about.description1":
-      "Somos un equipo de físicos y científicos de datos apasionados por resolver problemas complejos a través de soluciones innovadoras de IA.",
+      "Fundada por un equipo de expertos con pasión por resolver problemas complejos, Exdata se especializa en análisis avanzados y soluciones impulsadas por IA que transforman cómo las organizaciones abordan los desafíos.",
     "home.about.description2":
-      "Nuestro trasfondo único en física nos da una comprensión profunda del modelado matemático y análisis estadístico, permitiéndonos abordar desafíos que otros podrían encontrar insuperables.",
-    "home.about.button": "Conoce Más Sobre Nosotros",
-
-    "home.cta.title": "¿Listo para Transformar Tu Negocio?",
+      "Nuestro enfoque único combina metodología analítica rigurosa con técnicas de IA de vanguardia para ofrecer soluciones que son tanto innovadoras como confiables.",
+    "home.about.button": "Conocenos",
+    "home.cta.title": "¿Listo para transformar tus datos?",
     "home.cta.description":
-      "Hablemos sobre cómo nuestra experiencia en IA y ciencia de datos puede impulsar tu negocio hacia adelante.",
-    "home.cta.button": "Comienza Hoy",
+      "Hablemos sobre cómo nuestra experiencia analítica y soluciones de IA pueden ayudarte a resolver problemas complejos e impulsar la innovación.",
+    "home.cta.button": "Contactanos",
 
     // About page
     "about.hero.title": "Sobre Exdata",
@@ -604,45 +831,60 @@ const translations = {
   },
 }
 
-type Language = "en" | "es"
+// Create the context with a default value
+const LanguageContext = createContext<LanguageContextType>({
+  language: "en",
+  setLanguage: () => {},
+  t: (key) => key,
+})
 
-interface LanguageContextType {
-  language: Language
-  setLanguage: (lang: Language) => void
-  t: (key: string) => string
-}
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  // Initialize state with a default value
+  const [language, setLanguageState] = useState<Language>("en")
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
-
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en")
-
+  // Load language preference from localStorage on component mount
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") as Language
-    if (savedLanguage && (savedLanguage === "en" || savedLanguage === "es")) {
-      setLanguage(savedLanguage)
+    try {
+      const savedLanguage = localStorage.getItem("language") as Language
+      if (savedLanguage && (savedLanguage === "en" || savedLanguage === "es")) {
+        setLanguageState(savedLanguage)
+      }
+    } catch (error) {
+      console.error("Error loading language from localStorage:", error)
     }
   }, [])
 
-  const handleSetLanguage = (lang: Language) => {
-    setLanguage(lang)
-    localStorage.setItem("language", lang)
+  // Function to update language and save to localStorage
+  const setLanguage = (newLanguage: Language) => {
+    try {
+      setLanguageState(newLanguage)
+      localStorage.setItem("language", newLanguage)
+      // Force a re-render by updating the document language
+      document.documentElement.lang = newLanguage
+    } catch (error) {
+      console.error("Error saving language to localStorage:", error)
+    }
   }
 
+  // Translation function with proper type safety
   const t = (key: string): string => {
-    return translations[language][key as keyof (typeof translations)[typeof language]] || key
+    try {
+      const translationKey = key as keyof TranslationKeys
+      return translations[language][translationKey] || key
+    } catch (error) {
+      console.error(`Translation error for key: ${key}`, error)
+      return key
+    }
   }
 
-  return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
-      {children}
-    </LanguageContext.Provider>
-  )
+  // Provide the language context to children
+  return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
 }
 
+// Custom hook to use the language context
 export function useLanguage() {
   const context = useContext(LanguageContext)
-  if (context === undefined) {
+  if (!context) {
     throw new Error("useLanguage must be used within a LanguageProvider")
   }
   return context

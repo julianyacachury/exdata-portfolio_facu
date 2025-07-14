@@ -2,22 +2,18 @@
 
 import type React from "react"
 
-import { Inter } from "next/font/google"
-import Link from "next/link"
 import { useState } from "react"
+import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
-
-import { ThemeProvider } from "@/components/theme-provider"
 import { Button } from "@/components/ui/button"
 import { LanguageProvider, useLanguage } from "@/contexts/language-context"
 import { LanguageSelector } from "@/components/language-selector"
 import { ScrollToTopButton } from "@/components/scroll-to-top-button"
 
-const inter = Inter({ subsets: ["latin"] })
-
 function Header() {
-  const { t } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   const navigation = [
     { name: t("nav.home"), href: "/" },
@@ -31,26 +27,36 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded bg-brand-blue"></div>
-          <span className="text-xl font-bold">Exdata</span>
+      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        {/* Logo and Brand */}
+        <Link href="/" className="flex items-center space-x-3">
+          <div className="relative h-8 w-auto">
+            <Image
+              src="/Logo Exdata.png"
+              alt="Exdata Logo"
+              width={120}
+              height={32}
+              className="h-8 w-auto object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium transition-colors hover:text-brand-blue"
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
               {item.name}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center space-x-2">
+        {/* Language Selector and Mobile Menu */}
+        <div className="flex items-center space-x-4">
           <LanguageSelector />
 
           {/* Mobile menu button */}
@@ -58,25 +64,25 @@ function Header() {
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
-      </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden border-t bg-background">
-          <nav className="container mx-auto px-4 py-4 space-y-2">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block py-2 text-sm font-medium transition-colors hover:text-brand-blue"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="absolute top-16 left-0 right-0 bg-background border-b md:hidden">
+            <nav className="flex flex-col space-y-4 p-4">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+      </div>
     </header>
   )
 }
@@ -88,99 +94,89 @@ function Footer() {
     <footer className="bg-slate-900 text-white">
       <div className="container mx-auto px-4 py-12 md:px-6">
         <div className="grid gap-8 md:grid-cols-4">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="h-8 w-8 rounded bg-brand-mint"></div>
-              <span className="text-xl font-bold">Exdata</span>
+          {/* Company Info */}
+          <div className="md:col-span-2">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="relative h-10 w-auto">
+                <Image
+                  src="/Logo Exdata.png"
+                  alt="Exdata Logo"
+                  width={150}
+                  height={40}
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                />
+              </div>
             </div>
-            <p className="text-slate-400">Transforming data into intelligent solutions through physics-powered AI.</p>
+            <p className="text-slate-300 max-w-md">{t("footer.description")}</p>
           </div>
 
+          {/* Company Links */}
           <div>
-            <h3 className="font-semibold mb-4">{t("nav.services")}</h3>
-            <ul className="space-y-2 text-slate-400">
-              <li>
-                <Link href="/services" className="hover:text-white transition-colors">
-                  Advanced Analytics
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:text-white transition-colors">
-                  Data Strategy
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:text-white transition-colors">
-                  Predictive Modeling
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:text-white transition-colors">
-                  AI Solutions
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-slate-400">
+            <h3 className="font-semibold mb-4">{t("footer.company")}</h3>
+            <ul className="space-y-2 text-slate-300">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
-                  {t("nav.about")}
+                  {t("footer.aboutUs")}
                 </Link>
               </li>
               <li>
                 <Link href="/team" className="hover:text-white transition-colors">
-                  {t("nav.team")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="hover:text-white transition-colors">
-                  {t("nav.projects")}
+                  {t("footer.ourTeam")}
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-white transition-colors">
-                  {t("nav.contact")}
+                  {t("footer.contact")}
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Services Links */}
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-slate-400">
-              <li>exdata.co@gmail.com</li>
-              <li>+54 9 11 6999-3080</li>
-              <li>Buenos Aires, Argentina</li>
+            <h3 className="font-semibold mb-4">{t("footer.services")}</h3>
+            <ul className="space-y-2 text-slate-300">
+              <li>
+                <Link href="/services" className="hover:text-white transition-colors">
+                  {t("service.analytics")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-white transition-colors">
+                  {t("service.dataStrategy")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-white transition-colors">
+                  {t("service.predictive")}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
+        {/* Copyright */}
         <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
-          <p>&copy; 2024 Exdata. All rights reserved.</p>
+          <p>&copy; 2024 Exdata. {t("footer.copyright")}</p>
         </div>
       </div>
     </footer>
   )
 }
 
-export default function ClientLayout({ children }: { children: React.ReactNode }) {
+export default function ClientLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
-          <LanguageProvider>
-            <div className="min-h-screen flex flex-col">
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <ScrollToTopButton />
-            </div>
-          </LanguageProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <LanguageProvider>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <ScrollToTopButton />
+      </div>
+    </LanguageProvider>
   )
 }
