@@ -1,12 +1,15 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
 import ClientLayout from "./ClientLayout"
 
+const inter = Inter({ subsets: ["latin"] })
+
 export const metadata: Metadata = {
-  title: "Exdata - AI & Machine Learning Powered by Physics",
+  title: "Exdata - Advanced Analytics & AI Solutions",
   description:
-    "Exdata combines deep expertise in physics with cutting-edge AI to solve complex problems and drive innovation.",
-    generator: 'v0.dev'
+    "Combining analytical expertise with AI innovation to solve complex problems and drive technological advancement.",
 }
 
 export default function RootLayout({
@@ -14,9 +17,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <ClientLayout>{children}</ClientLayout>
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ClientLayout>{children}</ClientLayout>
+      </body>
+    </html>
+  )
 }
-
-
-
-import './globals.css'
