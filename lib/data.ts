@@ -42,11 +42,7 @@ export const projects = [
       "We implemented an automated pipeline that scans `.eml` files, extracts attached PDFs, and analyzes their content to determine whether they are suitable for OCR. If eligible, a specific predefined section of each document is processed using Tesseract OCR to extract relevant text. This extracted data is saved in `.txt` files for later structured analysis.",
     results:
       "The automation reduced processing time by over 80%, eliminated manual errors, and ensured consistent document naming and classification. The client now processes hundreds of files daily with minimal oversight, significantly improving operational efficiency.",
-<<<<<<< HEAD
     technologies: ["Python", "OCR", "Web Automation"],
-=======
-    technologies: ["Python", "OCR", "Web Automation", "[TECH 4]", "[TECH 5]"],
->>>>>>> 949bc4ea5f94884cd5a538440cb2f3a678a25a94
   },
   {
   id: "ExactasAgent",
