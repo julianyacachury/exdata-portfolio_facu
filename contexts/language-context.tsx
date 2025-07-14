@@ -421,25 +421,25 @@ const translations: Record<Language, TranslationKeys> = {
 
     "projects.OCR.title": "OCR Document Processing System",
     "projects.OCR.category": "Automation",
-    "projects.OCR.description": "Our system reads .eml email files, extracts attached PDFs, and scans them for QR or barcodes using PyZbar. If valid codes are found, OCR is applied with Tesseract to extract key data. Files are then automatically renamed and organized based on the extracted information. Seamlessly integrates into your workflow to save time and reduce errors.",
+    "projects.OCR.description": "Automated system that processes email attachments, scans for QR/barcodes, and extracts data using OCR technology for document organization.",
     "projects.OCR.challenge": "The client was receiving large volumes of emails containing invoice PDFs, which had to be manually reviewed, classified, and renamed based on embedded QR or barcodes. This process was time-consuming, prone to human error, and lacked consistency.",
     "projects.OCR.solution": "We implemented an automated pipeline that scans `.eml` files, extracts attached PDFs, and analyzes their content to determine whether they are suitable for OCR. If eligible, a specific predefined section of each document is processed using Tesseract OCR to extract relevant text. This extracted data is saved in `.txt` files for later structured analysis.",
     "projects.OCR.results": "The automation reduced processing time by over 80%, eliminated manual errors, and ensured consistent document naming and classification. The client now processes hundreds of files daily with minimal oversight, significantly improving operational efficiency.",
    
     "projects.ExactasAgent.title": "University Information Agent System",
     "projects.ExactasAgent.category": "AI Automation",
-    "projects.ExactasAgent.description": "We developed an intelligent query agent for the Faculty of Exact and Natural Sciences (UBA), enabling students and staff to access real-time information about class schedules, room assignments, professors, surveys, administrative procedures, and more—all through a conversational interface.",
+    "projects.ExactasAgent.description": "Intelligent conversational agent for university students and staff to access real-time information about schedules, professors, and administrative procedures.",
     "projects.ExactasAgent.challenge": "The university's online systems were fragmented and hard to navigate, making it difficult for students to quickly access practical information like course schedules, classroom changes, or how to complete administrative procedures. This led to frustration and inefficiency, especially during peak academic periods.",
     "projects.ExactasAgent.solution": "We created a centralized agent that integrates data from multiple university sources and platforms. The system understands natural language queries and responds with accurate, real-time information about courses, professors, classrooms, surveys, and administrative steps. It's accessible via web or chat interfaces, significantly improving user experience.",
     "projects.ExactasAgent.results": "The agent system greatly reduced the time users spent searching for academic and administrative information. Students now get instant answers to their queries, and university staff reported a decrease in repetitive questions. Overall, it streamlined access to critical data and improved satisfaction across the board.",
     
     "projects.DIBtoDCOM.title": "Custom Software and DLLs for Medical Image Conversion",
     "projects.DIBtoDCOM.category": "Healthcare",
-    "projects.DIBtoDCOM.description": "We developed custom software and DLLs to convert medical images from DIB (Device Independent Bitmap) format to DCOM, ensuring compatibility with specialized healthcare imaging systems. The solution streamlines the integration of legacy image data into modern diagnostic platforms.",
+    "projects.DIBtoDCOM.description": "Custom software solution for converting medical images from DIB to DCOM format, ensuring compatibility with modern healthcare imaging systems.",
     "projects.DIBtoDCOM.challenge": "A healthcare client needed to migrate a large archive of medical images stored in the outdated DIB format to the DCOM format used in current medical imaging systems. Manual conversion or third-party tools were either unreliable or insufficiently customizable.",
     "projects.DIBtoDCOM.solution": "We created a robust and efficient image conversion pipeline in the form of custom software and dynamic-link libraries (DLLs). These tools were specifically designed to handle medical image data, preserving fidelity and metadata while converting from DIB to DCOM format in bulk.",
     "projects.DIBtoDCOM.results": "The client achieved full integration of legacy image data into their modern imaging platform. The custom solution reduced manual handling, ensured regulatory compliance, and provided reliable, high-fidelity conversions at scale.",
-    
+   
     // Technologies page
     "tech.hero.title": "Our Technology Stack",
     "tech.hero.description":
@@ -738,25 +738,25 @@ const translations: Record<Language, TranslationKeys> = {
 
     "projects.OCR.title": "Sistema de Procesamiento de Documentos OCR",
     "projects.OCR.category": "Automatización",
-    "projects.OCR.description": "Nuestro sistema lee archivos de correo .eml, extrae PDFs adjuntos y los escanea en busca de códigos QR o de barras usando PyZbar. Si se encuentran códigos válidos, se aplica OCR con Tesseract para extraer datos clave. Los archivos se renombran y organizan automáticamente según la información extraída. Se integra perfectamente en tu flujo de trabajo para ahorrar tiempo y reducir errores.",
-    "projects.OCR.challenge": "El cliente recibía grandes volúmenes de correos electrónicos que contenían PDFs de facturas, que tenían que ser revisados manualmente, clasificados y renombrados según los códigos QR o de barras incorporados. Este proceso era lento, propenso a errores humanos y carecía de consistencia.",
-    "projects.OCR.solution": "Implementamos un pipeline automatizado que escanea archivos `.eml`, extrae PDFs adjuntos y analiza su contenido para determinar si son aptos para OCR. Si son elegibles, se procesa una sección predefinida específica de cada documento usando OCR Tesseract para extraer texto relevante. Esta información extraída se guarda en archivos `.txt` para análisis estructurado posterior.",
-    "projects.OCR.results": "La automatización redujo el tiempo de procesamiento en más del 80%, eliminó errores manuales y aseguró un nombramiento y clasificación consistente de documentos. El cliente ahora procesa cientos de archivos diariamente con supervisión mínima, mejorando significativamente la eficiencia operativa.",
+    "projects.OCR.description": "Sistema automatizado que procesa archivos adjuntos de correo electrónico, escanea códigos QR/de barras y extrae datos usando tecnología OCR para la organización de documentos.",
+    "projects.OCR.challenge": "El cliente estaba recibiendo grandes volúmenes de correos electrónicos que contenían PDFs de facturas, que debían ser revisados, clasificados y renombrados manualmente según los códigos QR o de barras integrados. Este proceso era lento, propenso a errores humanos y carecía de consistencia.",
+    "projects.OCR.solution": "Implementamos un pipeline automatizado que escanea archivos .eml, extrae PDFs adjuntos y analiza su contenido para determinar si son adecuados para OCR. Si son elegibles, una sección predefinida específica de cada documento se procesa usando Tesseract OCR para extraer texto relevante. Estos datos extraídos se guardan en archivos .txt para análisis estructurado posterior.",
+    "projects.OCR.results": "La automatización redujo el tiempo de procesamiento en más del 80%, eliminó errores manuales y aseguró un nombrado y clasificación consistente de documentos. El cliente ahora procesa cientos de archivos diariamente con supervisión mínima, mejorando significativamente la eficiencia operacional.",
     
     "projects.ExactasAgent.title": "Sistema de Agente de Información Universitaria",
-    "projects.ExactasAgent.category": "Automatización IA",
-    "projects.ExactasAgent.description": "Desarrollamos un agente de consultas inteligente para la Facultad de Ciencias Exactas y Naturales (UBA), permitiendo a estudiantes y personal acceder a información en tiempo real sobre horarios de clases, asignaciones de aulas, profesores, encuestas, procedimientos administrativos y más, todo a través de una interfaz conversacional.",
-    "projects.ExactasAgent.challenge": "Los sistemas en línea de la universidad estaban fragmentados y eran difíciles de navegar, lo que dificultaba a los estudiantes acceder rápidamente a información práctica como horarios de cursos, cambios de aula o cómo completar procedimientos administrativos. Esto generaba frustración e ineficiencia, especialmente durante períodos académicos pico.",
+    "projects.ExactasAgent.category": "Automatización con IA",
+    "projects.ExactasAgent.description": "Agente conversacional inteligente para estudiantes y personal universitario para acceder a información en tiempo real sobre horarios, profesores y procedimientos administrativos.",
+    "projects.ExactasAgent.challenge": "Los sistemas en línea de la universidad estaban fragmentados y eran difíciles de navegar, lo que dificultaba que los estudiantes accedieran rápidamente a información práctica como horarios de cursos, cambios de aula o cómo completar procedimientos administrativos. Esto generaba frustración e ineficiencia, especialmente durante períodos académicos pico.",
     "projects.ExactasAgent.solution": "Creamos un agente centralizado que integra datos de múltiples fuentes y plataformas universitarias. El sistema comprende consultas en lenguaje natural y responde con información precisa y en tiempo real sobre cursos, profesores, aulas, encuestas y pasos administrativos. Es accesible a través de interfaces web o chat, mejorando significativamente la experiencia del usuario.",
-    "projects.ExactasAgent.results": "El sistema de agente redujo enormemente el tiempo que los usuarios dedicaban a buscar información académica y administrativa. Los estudiantes ahora obtienen respuestas instantáneas a sus consultas, y el personal universitario reportó una disminución en preguntas repetitivas. En general, optimizó el acceso a datos críticos y mejoró la satisfacción en todos los aspectos.",
+    "projects.ExactasAgent.results": "El sistema de agente redujo considerablemente el tiempo que los usuarios pasaban buscando información académica y administrativa. Los estudiantes ahora obtienen respuestas instantáneas a sus consultas, y el personal universitario reportó una disminución en preguntas repetitivas. En general, optimizó el acceso a datos críticos y mejoró la satisfacción en todos los niveles.",
     
     "projects.DIBtoDCOM.title": "Software Personalizado y DLLs para Conversión de Imágenes Médicas",
     "projects.DIBtoDCOM.category": "Salud",
-    "projects.DIBtoDCOM.description": "Desarrollamos software personalizado y DLLs para convertir imágenes médicas del formato DIB (Device Independent Bitmap) a DCOM, asegurando compatibilidad con sistemas especializados de imágenes médicas. La solución optimiza la integración de datos de imágenes heredadas en plataformas de diagnóstico modernas.",
-    "projects.DIBtoDCOM.challenge": "Un cliente del sector salud necesitaba migrar un gran archivo de imágenes médicas almacenadas en el formato DIB obsoleto al formato DCOM utilizado en sistemas de imágenes médicas actuales. La conversión manual o herramientas de terceros eran poco confiables o insuficientemente personalizables.",
-    "projects.DIBtoDCOM.solution": "Creamos un pipeline de conversión de imágenes robusto y eficiente en forma de software personalizado y bibliotecas de enlace dinámico (DLLs). Estas herramientas fueron diseñadas específicamente para manejar datos de imágenes médicas, preservando la fidelidad y metadatos mientras se convertían del formato DIB a DCOM en lotes.",
-    "projects.DIBtoDCOM.results": "El cliente logró la integración completa de datos de imágenes heredadas en su plataforma de imágenes moderna. La solución personalizada redujo el manejo manual, aseguró el cumplimiento regulatorio y proporcionó conversiones confiables y de alta fidelidad a escala.",
-    
+    "projects.DIBtoDCOM.description": "Solución de software personalizada para convertir imágenes médicas de formato DIB a DCOM, asegurando compatibilidad con sistemas modernos de imágenes médicas.",
+    "projects.DIBtoDCOM.challenge": "Un cliente del sector salud necesitaba migrar un gran archivo de imágenes médicas almacenadas en el formato obsoleto DIB al formato DCOM usado en los sistemas actuales de imágenes médicas. La conversión manual o herramientas de terceros eran poco confiables o insuficientemente personalizables.",
+    "projects.DIBtoDCOM.solution": "Creamos un pipeline de conversión de imágenes robusto y eficiente en forma de software personalizado y bibliotecas de enlace dinámico (DLLs). Estas herramientas fueron específicamente diseñadas para manejar datos de imágenes médicas, preservando la fidelidad y metadatos mientras convertían de formato DIB a DCOM en lotes.",
+    "projects.DIBtoDCOM.results": "El cliente logró la integración completa de datos de imágenes heredadas en su plataforma moderna de imágenes. La solución personalizada redujo el manejo manual, aseguró el cumplimiento regulatorio y proporcionó conversiones confiables y de alta fidelidad a escala.",
+        
     // Technologies page
     "tech.hero.title": "Nuestro Stack Tecnológico",
     "tech.hero.description":
