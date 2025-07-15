@@ -49,7 +49,7 @@ export default function TeamPage() {
     {
       name: "Emiliano Barone",
       role: t("team.emiliano.role") || "Physicist & ML Specialist",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/Foto Emi.jpg",
       bio:
         t("team.emiliano.bio") ||
         "Physicist with 1 year of experience training ML models. Emiliano applies his strong theoretical physics background to machine learning, specializing in developing and optimizing models that incorporate statistics principles to improve performance and interpretability.",
@@ -67,7 +67,7 @@ export default function TeamPage() {
     {
       name: "Andres Tovar",
       role: t("team.andres.role") || "Physicist & Backend Developer",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/Foto Andy.png",
       bio:
         t("team.andres.bio") ||
         "Physicist and backend developer with 1 year of experience. Andres combines his knowledge with software engineering skills to build robust backend systems that power our AI applications, ensuring they're scalable, efficient, and reliable.",
