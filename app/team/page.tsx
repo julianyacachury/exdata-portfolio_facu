@@ -82,6 +82,24 @@ export default function TeamPage() {
         github: "#",
       },
     },
+    {
+      name: "Tomas Di Napoli",
+      role: t("team.tomi.role") || "Physicist & ML Specialist",
+      image: "/Foto Dina.jpg",
+      bio:
+        t("team.tomi.bio") ||
+        "",
+      expertise: [
+        t("team.tomi.expertise.1") || "Machine Learning",
+        t("team.tomi.expertise.2") || "Model Training",
+        t("team.tomi.expertise.3") || "Data Analysis",
+      ],
+      social: {
+        linkedin: "#",
+        twitter: "#",
+        github: "#",
+      },
+    },
   ]
 
   // Animation variants

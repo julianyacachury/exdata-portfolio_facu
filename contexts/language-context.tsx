@@ -209,6 +209,11 @@ type TranslationKeys = {
   "team.andres.expertise.1": string
   "team.andres.expertise.2": string
   "team.andres.expertise.3": string
+  "team.tomi.role": string
+  "team.tomi.bio": string
+  "team.tomi.expertise.1": string
+  "team.tomi.expertise.2": string
+  "team.tomi.expertise.3": string
 
   // Contact page
   "contact.hero.title": string
@@ -520,6 +525,13 @@ const translations: Record<Language, TranslationKeys> = {
     "team.andres.expertise.1": "Backend Development",
     "team.andres.expertise.2": "API Design",
     "team.andres.expertise.3": "Database Management",
+
+    "team.tomi.role": "Physicist & Backend Developer",
+    "team.tomi.bio":
+      "Physicist and backend developer with 1 year of experience. Andres combines his knowledge with software engineering skills to build robust backend systems that power our AI applications, ensuring they're scalable, efficient, and reliable.",
+    "team.tomi.expertise.1": "Backend Development",
+    "team.tomi.expertise.2": "API Design",
+    "team.tomi.expertise.3": "Database Management",
 
     // Contact page
     "contact.hero.title": "Get in Touch",
@@ -837,6 +849,13 @@ const translations: Record<Language, TranslationKeys> = {
     "team.andres.expertise.1": "Desarrollo Backend",
     "team.andres.expertise.2": "Diseño de APIs",
     "team.andres.expertise.3": "Gestión de bases de datos",
+
+    "team.tomi.role": "Físico y Desarrollador Backend",
+    "team.tomi.bio":
+      "Físico y desarrollador backend con 1 año de experiencia. Andrés combina su conocimiento con habilidades de ingeniería de software para construir sistemas backend robustos que impulsan nuestras aplicaciones de IA, asegurando que sean escalables, eficientes y confiables.",
+    "team.tomi.expertise.1": "Desarrollo Backend",
+    "team.tomi.expertise.2": "Diseño de APIs",
+    "team.tomi.expertise.3": "Gestión de bases de datos",
 
     // Contact page
     "contact.hero.title": "Ponte en contacto",
