@@ -214,6 +214,11 @@ type TranslationKeys = {
   "team.tomi.expertise.1": string
   "team.tomi.expertise.2": string
   "team.tomi.expertise.3": string
+    "team.fior.role": string
+  "team.fior.bio": string
+  "team.fior.expertise.1": string
+  "team.fior.expertise.2": string
+  "team.fior.expertise.3": string
 
   // Contact page
   "contact.hero.title": string
@@ -529,9 +534,16 @@ const translations: Record<Language, TranslationKeys> = {
     "team.tomi.role": "Physicist & Backend Developer",
     "team.tomi.bio":
       "Physicist and backend developer with 1 year of experience. Andres combines his knowledge with software engineering skills to build robust backend systems that power our AI applications, ensuring they're scalable, efficient, and reliable.",
-    "team.tomi.expertise.1": "Backend Development",
-    "team.tomi.expertise.2": "API Design",
-    "team.tomi.expertise.3": "Database Management",
+    "team.tomi.expertise.1": "Instrumentation",
+    "team.tomi.expertise.2": "Instrument Programming",
+    "team.tomi.expertise.3": "API Design",
+
+    "team.fior.role": "Community Manager",
+    "team.fior.bio":
+      "Communications graduate with a comprehensive background in analysis, content production, and media strategy. Brings a critical perspective and creative approach to digital media and institutional communication, with a focus on developing impactful and strategic content across platforms.",
+    "team.fior.expertise.1": "Communication and Content",
+    "team.fior.expertise.2": "Digital Marketing and Social Media",
+    "team.fior.expertise.3": "Interdisciplinary Projects",
 
     // Contact page
     "contact.hero.title": "Get in Touch",
@@ -856,6 +868,13 @@ const translations: Record<Language, TranslationKeys> = {
     "team.tomi.expertise.1": "Desarrollo Backend",
     "team.tomi.expertise.2": "Diseño de APIs",
     "team.tomi.expertise.3": "Gestión de bases de datos",
+
+    "team.fior.role": "Community Manager",
+    "team.fior.bio":
+      "Graduada en Comunicación con una formación integral en análisis, producción de contenidos y estrategia mediática. Aporta una mirada crítica y un enfoque creativo a medios digitales y comunicación institucional, con énfasis en el desarrollo de contenidos estratégicos e impactantes en múltiples plataformas.",
+    "team.fior.expertise.1": "Comunicación y Contenidos",
+    "team.fior.expertise.2": "Marketing Digital y Redes Sociales",
+    "team.fior.expertise.3": "Proyectos Interdisciplinarios",
 
     // Contact page
     "contact.hero.title": "Ponte en contacto",

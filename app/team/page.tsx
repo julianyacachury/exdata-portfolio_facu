@@ -90,12 +90,30 @@ export default function TeamPage() {
         t("team.tomi.bio") ||
         "",
       expertise: [
-        t("team.tomi.expertise.1") || "Machine Learning",
-        t("team.tomi.expertise.2") || "Model Training",
-        t("team.tomi.expertise.3") || "Data Analysis",
+        t("team.tomi.expertise.1") || "Instrumentation",
+        t("team.tomi.expertise.2") || "Instrument Programming",
+        t("team.tomi.expertise.3") || "API Design",
       ],
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/tom%C3%A1s-di-napoli-ba2b86221/",
+        twitter: "#",
+        github: "http://github.com/tdinapoli/",
+      },
+    },
+        {
+      name: "Fiorella Bernabei",
+      role: t("team.fior.role") || "Community Manager",
+      image: "/Foto Fior.jpg",
+      bio:
+        t("team.fior.bio") ||
+        "",
+      expertise: [
+        t("team.fior.expertise.1") || "Communication and content",
+        t("team.fior.expertise.2") || "Digital Marketing and Social Media",
+        t("team.fior.expertise.3") || "Interdisciplinary Projects",
+      ],
+      social: {
+        linkedin: "https://www.linkedin.com/in/fiorella-bernabei-688343244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         twitter: "#",
         github: "#",
       },
