@@ -214,7 +214,7 @@ type TranslationKeys = {
   "team.tomi.expertise.1": string
   "team.tomi.expertise.2": string
   "team.tomi.expertise.3": string
-    "team.fior.role": string
+  "team.fior.role": string
   "team.fior.bio": string
   "team.fior.expertise.1": string
   "team.fior.expertise.2": string

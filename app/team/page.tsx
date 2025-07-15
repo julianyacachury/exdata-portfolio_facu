@@ -322,7 +322,8 @@ export default function TeamPage() {
                         href: `mailto:${member.name.toLowerCase().split(" ")[0]}@exdata.com`,
                         label: `Email ${member.name}`,
                       },
-                    ].map((social, socialIndex) => (
+                    ].filter(item => item.href) // Filter out items without href
+                    .map((social, socialIndex) => (
                       <motion.a
                         key={socialIndex}
                         href={social.href}
