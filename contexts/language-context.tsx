@@ -219,6 +219,11 @@ type TranslationKeys = {
   "team.fior.expertise.1": string
   "team.fior.expertise.2": string
   "team.fior.expertise.3": string
+  "team.yaca.role": string
+  "team.yaca.bio": string
+  "team.yaca.expertise.1": string
+  "team.yaca.expertise.2": string
+  "team.yaca.expertise.3": string
 
   // Contact page
   "contact.hero.title": string
@@ -537,6 +542,13 @@ const translations: Record<Language, TranslationKeys> = {
     "team.tomi.expertise.1": "Instrumentation",
     "team.tomi.expertise.2": "Instrument Programming",
     "team.tomi.expertise.3": "API Design",
+    
+    "team.yaca.role": "Physicist",
+    "team.yaca.bio":
+      "Physicist and Python developer with experience in scientific computing, algorithm design, and data analysis. Julian combines strong analytical skills with programming expertise to build custom tools and automate complex tasks, applying his problem-solving mindset across diverse technical projects.",
+    "team.yaca.expertise.1": "Mathematical Modeling",
+    "team.yaca.expertise.2": "Python Development",
+    "team.yaca.expertise.3": "Complex Systems Analysis",
 
     "team.fior.role": "Community Manager",
     "team.fior.bio":
@@ -868,6 +880,13 @@ const translations: Record<Language, TranslationKeys> = {
     "team.tomi.expertise.1": "Desarrollo Backend",
     "team.tomi.expertise.2": "Diseño de APIs",
     "team.tomi.expertise.3": "Gestión de bases de datos",
+
+    "team.yaca.role": "Físico",
+    "team.yaca.bio":
+      "Físico y desarrollador Python con experiencia en computación científica, diseño de algoritmos y análisis de datos. Julian combina una sólida formación analítica con habilidades de programación para crear herramientas a medida y automatizar tareas complejas, aportando una mirada resolutiva a distintos proyectos técnicos.",
+    "team.yaca.expertise.1": "Modelado Matemático",
+    "team.yaca.expertise.2": "Programación en Python",
+    "team.yaca.expertise.3": "Análisis de Sistemas Complejos",
 
     "team.fior.role": "Community Manager",
     "team.fior.bio":

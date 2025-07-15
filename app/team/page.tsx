@@ -60,7 +60,7 @@ export default function TeamPage() {
       ],
       social: {
         linkedin: "#",
-        twitter: "#",
+        twitter: undefined,
         github: "#",
       },
     },
@@ -78,7 +78,7 @@ export default function TeamPage() {
       ],
       social: {
         linkedin: "#",
-        twitter: "#",
+        twitter: undefined,
         github: "#",
       },
     },
@@ -96,8 +96,26 @@ export default function TeamPage() {
       ],
       social: {
         linkedin: "https://www.linkedin.com/in/tom%C3%A1s-di-napoli-ba2b86221/",
-        twitter: "#",
+        twitter: undefined,
         github: "http://github.com/tdinapoli/",
+      },
+    },
+    {
+      name: "Julian Yacachury",
+      role: t("team.yaca.role") || "Physicist",
+      image: "/Foto Yaca.jpg",
+      bio:
+        t("team.yaca.bio") ||
+        "",
+      expertise: [
+        t("team.yaca.expertise.1") || "Mathematical Modeling",
+        t("team.yaca.expertise.2") || "Python Development",
+        t("team.yaca.expertise.3") || "Complex Systems Analysis",
+      ],
+      social: {
+        linkedin: "www.linkedin.com/in/julian-yacachury-540749269",
+        twitter: undefined,
+        github: "https://github.com/julianyacachury",
       },
     },
         {
