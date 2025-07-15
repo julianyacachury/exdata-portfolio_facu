@@ -8,7 +8,7 @@ export default function TeamPage() {
   const { t } = useLanguage()
 
   const teamMembers = [
-    {
+    /*{
       name: "Facundo Joaquin García",
       role: t("team.facundo.role") || "Data Scientist",
       image: "/placeholder.svg?height=400&width=400",
@@ -45,7 +45,7 @@ export default function TeamPage() {
         twitter: "#",
         github: "#",
       },
-    },
+    },*/
     {
       name: "Emiliano Barone",
       role: t("team.emiliano.role") || "Physicist & ML Specialist",

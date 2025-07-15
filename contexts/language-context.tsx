@@ -187,7 +187,7 @@ type TranslationKeys = {
   "team.join.description": string
 
   // Team member profiles
-  "team.facundo.role": string
+  /*"team.facundo.role": string
   "team.facundo.bio": string
   "team.facundo.expertise.1": string
   "team.facundo.expertise.2": string
@@ -198,7 +198,7 @@ type TranslationKeys = {
   "team.agustin.expertise.1": string
   "team.agustin.expertise.2": string
   "team.agustin.expertise.3": string
-  "team.agustin.expertise.4": string
+  "team.agustin.expertise.4": string*/
   "team.emiliano.role": string
   "team.emiliano.bio": string
   "team.emiliano.expertise.1": string
@@ -491,7 +491,7 @@ const translations: Record<Language, TranslationKeys> = {
       "We're always looking for talented scientists, AI researchers, and engineers to join our team. If you're passionate about the intersection of science and AI, we'd love to hear from you.",
 
     // Team member profiles
-    "team.facundo.role": "Data Scientist",
+    /*"team.facundo.role": "Data Scientist",
     "team.facundo.bio":
       "Data Scientist with 3 years of experience in diverse projects. Facundo combines his physics background with data science expertise to extract meaningful insights from complex datasets and develop innovative solutions for clients across various industries.",
     "team.facundo.expertise.1": "Data Science",
@@ -505,7 +505,7 @@ const translations: Record<Language, TranslationKeys> = {
     "team.agustin.expertise.1": "AI Development",
     "team.agustin.expertise.2": "Product Engineering",
     "team.agustin.expertise.3": "Deep Learning",
-    "team.agustin.expertise.4": "MLOps",
+    "team.agustin.expertise.4": "MLOps",*/
 
     "team.emiliano.role": "Physicist & ML Specialist",
     "team.emiliano.bio":
@@ -808,7 +808,7 @@ const translations: Record<Language, TranslationKeys> = {
       "Siempre estamos buscando científicos talentosos, investigadores de IA e ingenieros para unirse a nuestro equipo. Si te apasiona la intersección de la ciencia y la IA, nos encantaría saber de ti.",
 
     // Team member profiles
-    "team.facundo.role": "Científico de Datos",
+    /*"team.facundo.role": "Científico de Datos",
     "team.facundo.bio":
       "Científico de datos con 3 años de experiencia en proyectos diversos. Facundo combina su formación en física con experiencia en ciencia de datos para extraer información significativa de conjuntos de datos complejos y desarrollar soluciones innovadoras para clientes en diversas industrias.",
     "team.facundo.expertise.1": "Ciencia de datos",
@@ -822,7 +822,7 @@ const translations: Record<Language, TranslationKeys> = {
     "team.agustin.expertise.1": "Desarrollo de IA",
     "team.agustin.expertise.2": "Ingeniería de productos",
     "team.agustin.expertise.3": "Aprendizaje profundo",
-    "team.agustin.expertise.4": "MLOps",
+    "team.agustin.expertise.4": "MLOps",*/
 
     "team.emiliano.role": "Físico y Especialista en ML",
     "team.emiliano.bio":
