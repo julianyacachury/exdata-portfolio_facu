@@ -132,7 +132,7 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-start">
+              <div className="flex items-start mb-6">
                 <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-brand-mint/20">
                   <Github className="h-5 w-5 text-brand-mint" />
                 </div>
