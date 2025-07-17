@@ -45,7 +45,7 @@ export default function ContactPage() {
     const subject = (form.querySelector("#subject") as HTMLInputElement).value
     const message = (form.querySelector("#message") as HTMLTextAreaElement).value
 
-    const mailto = `mailto:julian.yacachury@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    const mailto = `mailto:exdata.co@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       `Name: ${firstName} ${lastName}\nCompany: ${company}\nEmail: ${email}\n\nMessage:\n${message}`
     )}`
 
@@ -168,15 +168,16 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="rounded-lg overflow-hidden h-[300px] relative">
-                <div className="absolute inset-0 bg-slate-200 flex items-center justify-center">
-                  <MapPin className="h-12 w-12 text-slate-400" />
-                </div>
-                <img
-                  src="/placeholder.svg?height=300&width=600"
-                  alt={t("contact.info.mapAlt")}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+              <iframe
+                title="Ubicación Exdata"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.6639460881466!2d-58.41730968477028!3d-34.61455078045473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb6c1852b5cf%3A0x1d8f9f820baadb9c!2sParque%20Centenario!5e0!3m2!1ses!2sar!4v1620123456789!5m2!1ses!2sar"
+                width="100%"
+                height="100%"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 border-0"
+              />
+            </div>
             </div>
           </div>
         </div>
