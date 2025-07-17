@@ -34,6 +34,23 @@ export default function ContactPage() {
       answer: t("contact.faq.a5"),
     },
   ]
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+
+    const firstName = (form.querySelector("#first-name") as HTMLInputElement).value
+    const lastName = (form.querySelector("#last-name") as HTMLInputElement).value
+    const email = (form.querySelector("#email") as HTMLInputElement).value
+    const company = (form.querySelector("#company") as HTMLInputElement).value
+    const subject = (form.querySelector("#subject") as HTMLInputElement).value
+    const message = (form.querySelector("#message") as HTMLTextAreaElement).value
+
+    const mailto = `mailto:exdata.co@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      `Name: ${firstName} ${lastName}\nCompany: ${company}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`
+
+    window.location.href = mailto
+  }
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -53,7 +70,7 @@ export default function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <h2 className="mb-6 text-2xl font-bold text-slate-900 sm:text-3xl">{t("contact.form.title")}</h2>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
                     <Label htmlFor="first-name">{t("contact.form.firstName")}</Label>
