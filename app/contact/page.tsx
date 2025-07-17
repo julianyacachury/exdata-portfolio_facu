@@ -45,7 +45,7 @@ export default function ContactPage() {
     const subject = (form.querySelector("#subject") as HTMLInputElement).value
     const message = (form.querySelector("#message") as HTMLTextAreaElement).value
 
-    const mailto = `mailto:exdata.co@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    const mailto = `mailto:julian.yacachury@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       `Name: ${firstName} ${lastName}\nCompany: ${company}\nEmail: ${email}\n\nMessage:\n${message}`
     )}`
 
