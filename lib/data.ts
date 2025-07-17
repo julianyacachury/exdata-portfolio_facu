@@ -63,7 +63,7 @@ export const projects = [
   id: "DIBtoDCOM",
   title: "Custom Software and DLLs for Medical Image Conversion",
   category: "Healthcare",
-  image: "/placeholder.svg?height=300&width=600",
+  image: "/DICOM.jpeg",
   description:
     "We developed custom software and DLLs to convert medical images from DIB (Device Independent Bitmap) format to DCOM, ensuring compatibility with specialized healthcare imaging systems. The solution streamlines the integration of legacy image data into modern diagnostic platforms.",
   challenge:
