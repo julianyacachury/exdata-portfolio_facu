@@ -134,29 +134,75 @@ export default function ServicesPage() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{
-                  scale: 1,
-                  opacity: 1,
-                  transition: {
-                    delay: 0.6,
-                    duration: 0.8,
-                  },
-                }}
-              >
-                <Atom className="h-48 w-48 animate-pulse text-brand-mint/30" />
-              </motion.div>
+              {/* Services Collage */}
+              <div className="grid grid-cols-3 gap-4 relative z-10">
+                <motion.div
+                  className="flex flex-col items-center p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                >
+                  <Brain className="h-8 w-8 text-brand-mint mb-2" />
+                  <span className="text-xs text-center text-slate-300">Analítica avanzada</span>
+                </motion.div>
+                
+                <motion.div
+                  className="flex flex-col items-center p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7, duration: 0.5 }}
+                >
+                  <Database className="h-8 w-8 text-brand-blue-light mb-2" />
+                  <span className="text-xs text-center text-slate-300">Estrategia de datos</span>
+                </motion.div>
+                
+                <motion.div
+                  className="flex flex-col items-center p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                >
+                  <BarChart2 className="h-8 w-8 text-brand-mint-dark mb-2" />
+                  <span className="text-xs text-center text-slate-300">Modelado predictivo</span>
+                </motion.div>
+                
+                <motion.div
+                  className="flex flex-col items-center p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9, duration: 0.5 }}
+                >
+                  <Microscope className="h-8 w-8 text-green-600 mb-2" />
+                  <span className="text-xs text-center text-slate-300">Business Intelligence</span>
+                </motion.div>
+                
+                <motion.div
+                  className="flex flex-col items-center p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0, duration: 0.5 }}
+                >
+                  <Server className="h-8 w-8 text-red-600 mb-2" />
+                  <span className="text-xs text-center text-slate-300">Inteligencia Artificial</span>
+                </motion.div>
+                
+                <motion.div
+                  className="flex flex-col items-center p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.1, duration: 0.5 }}
+                >
+                  <FileText className="h-8 w-8 text-orange-600 mb-2" />
+                  <span className="text-xs text-center text-slate-300">Consultoría</span>
+                </motion.div>
+              </div>
+              
+              {/* Background glow effect */}
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
                 initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: {
-                    delay: 0.8,
-                    duration: 1,
-                  },
-                }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8, duration: 1 }}
               >
                 <div className="h-32 w-32 rounded-full bg-brand-mint/20 blur-3xl"></div>
               </motion.div>
