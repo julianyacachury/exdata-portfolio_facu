@@ -57,24 +57,6 @@ const ProjectCarousel = () => {
           transition={{ duration: 0.6, ease: "easeInOut" }}
         />
       </AnimatePresence>
-
-      {/* Botones de navegación */}
-      <button
-        onClick={prevImage}
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-2 transition-all duration-200 opacity-80 hover:opacity-100"
-        aria-label="Imagen anterior"
-      >
-        <ChevronLeft className="h-5 w-5" />
-      </button>
-      
-      <button
-        onClick={nextImage}
-        className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-2 transition-all duration-200 opacity-80 hover:opacity-100"
-        aria-label="Siguiente imagen"
-      >
-        <ChevronRight className="h-5 w-5" />
-      </button>
-
       {/* Indicadores de puntos */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
@@ -87,11 +69,6 @@ const ProjectCarousel = () => {
             aria-label={`Ir a imagen ${index + 1}`}
           />
         ))}
-      </div>
-
-      {/* Contador de imágenes */}
-      <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium">
-        {currentIndex + 1} / {images.length}
       </div>
     </div>
   )
