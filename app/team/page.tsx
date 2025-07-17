@@ -48,7 +48,7 @@ export default function TeamPage() {
     },*/
     {
       name: "Emiliano Barone",
-      role: t("team.emiliano.role") || "Physicist & ML Specialist",
+      role: t("team.emiliano.role") || "Physicist & Hardware Specialist",
       image: "/Foto Emi.jpg",
       bio:
         t("team.emiliano.bio") ||

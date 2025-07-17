@@ -522,7 +522,7 @@ const translations: Record<Language, TranslationKeys> = {
     "team.agustin.expertise.3": "Deep Learning",
     "team.agustin.expertise.4": "MLOps",*/
 
-    "team.emiliano.role": "Physicist & ML Specialist",
+    "team.emiliano.role": "Physicist & Hardware Specialist",
     "team.emiliano.bio":
       "Physicist with 1 year of experience training ML models. Emiliano applies his strong theoretical physics background to machine learning, specializing in developing and optimizing models that incorporate statistics principles to improve performance and interpretability.",
     "team.emiliano.expertise.1": "Machine Learning",
@@ -860,7 +860,7 @@ const translations: Record<Language, TranslationKeys> = {
     "team.agustin.expertise.3": "Aprendizaje profundo",
     "team.agustin.expertise.4": "MLOps",*/
 
-    "team.emiliano.role": "Físico y Especialista en ML",
+    "team.emiliano.role": "Físico y Especialista en Hardware",
     "team.emiliano.bio":
       "Físico con 1 año de experiencia entrenando modelos de ML. Emiliano aplica su sólida formación en física teórica al aprendizaje automático, especializándose en desarrollar y optimizar modelos que incorporan principios estadísticos para mejorar el rendimiento y la interpretabilidad.",
     "team.emiliano.expertise.1": "Aprendizaje Automático",
