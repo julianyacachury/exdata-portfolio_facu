@@ -11,25 +11,25 @@ import { useLanguage } from "@/contexts/language-context"
 export default function AboutPage() {
   const { t } = useLanguage()
 
-  const teamPreview = [
-    {
-      name: "Facundo Joaquin García",
-      role: t("team.facundo.role"),
-      image: "/placeholder.svg?height=300&width=300",
-    },
-    {
-      name: "Agustin Brusco",
-      role: t("team.agustin.role"),
-      image: "/placeholder.svg?height=300&width=300",
-    },
+  const teamPreview = [    
     {
       name: "Emiliano Barone",
       role: t("team.emiliano.role"),
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/Foto Emi.jpg",
     },
     {
       name: "Andres Tovar",
       role: t("team.andres.role"),
+      image: "/Foto Andy.png",
+    },
+    {
+      name: "Tomas Di Napolí",
+      role: t("team.tomi.role"),
+      image: "/Foto Dina.jpg",
+    },
+    {
+      name: "Julian Yacachury",
+      role: t("team.yaca.role"),
       image: "/placeholder.svg?height=300&width=300",
     },
   ]
