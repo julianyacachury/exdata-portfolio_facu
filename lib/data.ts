@@ -19,7 +19,7 @@ export const projects = [
     id: "pharma",
     title: "Pharmaceutical Distribution Chatbot",
     category: "Healthcare",
-    image: "/placeholder.svg?height=300&width=600",
+    image: "/Foto pharmabot.png",
     description: "AI-powered chatbot for answering questions about pharmaceutical shipments and purchases.",
     challenge:
       "A pharmaceutical distributor needed to handle a high volume of customer inquiries about shipments and purchases efficiently.",
