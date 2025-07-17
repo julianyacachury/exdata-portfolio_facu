@@ -170,7 +170,7 @@ export default function ContactPage() {
               <div className="rounded-lg overflow-hidden h-[300px] relative">
               <iframe
                 title="Ubicación Exdata"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.6639460881466!2d-58.41730968477028!3d-34.61455078045473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb6c1852b5cf%3A0x1d8f9f820baadb9c!2sParque%20Centenario!5e0!3m2!1ses!2sar!4v1620123456789!5m2!1ses!2sar"
+                src="https://www.google.com/maps/place/Ciudad+Universitaria+-+UBA+-+Pabell%C3%B3n+I/@-34.5443694,-58.442038,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb44807e06b45:0xc381a39ad7639356!8m2!3d-34.5443738!4d-58.4394577!16s%2Fg%2F11bw7d7sn1?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D"
                 width="100%"
                 height="100%"
                 allowFullScreen
