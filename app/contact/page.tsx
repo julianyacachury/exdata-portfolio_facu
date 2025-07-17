@@ -131,6 +131,19 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
+                <div className="flex items-start">
+                  <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-brand-mint/20">
+                    <Github className="h-5 w-5 text-brand-mint" />
+                  </div>
+                  <div>
+                    <h3 className="mb-1 font-medium text-slate-900">{t("contact.info.github")}</h3>
+                    <p className="text-slate-600">
+                      <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:text-brand-blue-light">
+                        github.com/yourusername
+                      </a>
+                    </p>
+                  </div>
+                </div>
               </div>
               <div className="rounded-lg overflow-hidden h-[300px] relative">
                 <div className="absolute inset-0 bg-slate-200 flex items-center justify-center">
