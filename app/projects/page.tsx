@@ -1,14 +1,101 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { projects as projectsData } from "@/lib/data"
 import { useLanguage } from "@/contexts/language-context"
+
+// Componente del carrusel
+const ProjectCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  
+  // Array de imágenes para el carrusel - personaliza según tus proyectos
+  const images = [
+    "/Foto Techos.jpg",
+    "/OCR.jpg", 
+    "/DICOM.jpeg"
+  ]
+
+  // Auto-avanzar cada 4 segundos
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length)
+    }, 4000)
+    
+    return () => clearInterval(timer)
+  }, [images.length])
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+  }
+
+  return (
+    <div className="relative h-full w-full overflow-hidden rounded-lg bg-slate-700">
+      {/* Imágenes del carrusel */}
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt={`Project visualization ${currentIndex + 1}`}
+          className="h-full w-full object-cover"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+        />
+      </AnimatePresence>
+
+      {/* Botones de navegación */}
+      <button
+        onClick={prevImage}
+        className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-2 transition-all duration-200 opacity-80 hover:opacity-100"
+        aria-label="Imagen anterior"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      
+      <button
+        onClick={nextImage}
+        className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-2 transition-all duration-200 opacity-80 hover:opacity-100"
+        aria-label="Siguiente imagen"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+
+      {/* Indicadores de puntos */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`h-2 w-2 rounded-full transition-all duration-200 ${
+              index === currentIndex ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/75'
+            }`}
+            aria-label={`Ir a imagen ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Contador de imágenes */}
+      <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium">
+        {currentIndex + 1} / {images.length}
+      </div>
+    </div>
+  )
+}
 
 export default function ProjectsPage() {
   const { t } = useLanguage()
@@ -124,14 +211,7 @@ export default function ProjectsPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <motion.img
-                src="/placeholder.svg?height=400&width=600"
-                alt="Project visualization"
-                className="h-full w-full object-cover"
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.8 }}
-              />
+              <ProjectCarousel />
             </motion.div>
           </div>
         </motion.div>
@@ -302,4 +382,3 @@ export default function ProjectsPage() {
     </div>
   )
 }
-
