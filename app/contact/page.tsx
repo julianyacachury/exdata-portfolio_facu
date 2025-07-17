@@ -168,15 +168,15 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="rounded-lg overflow-hidden h-[300px] relative">
-              <iframe
-                title="Ubicación Exdata"
-                src="https://www.google.com/maps/place/Ciudad+Universitaria+-+UBA+-+Pabell%C3%B3n+I/@-34.5443694,-58.442038,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb44807e06b45:0xc381a39ad7639356!8m2!3d-34.5443738!4d-58.4394577!16s%2Fg%2F11bw7d7sn1?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D"
-                width="100%"
-                height="100%"
-                allowFullScreen
-                loading="lazy"
-                className="absolute inset-0 border-0"
-              />
+              <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.3627655005785!2d-58.44203798836349!3d-34.54436935425397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb44807e06b45%3A0xc381a39ad7639356!2sCiudad%20Universitaria%20-%20UBA%20-%20Pabell%C3%B3n%20I!5e0!3m2!1ses-419!2sar!4v1752774909347!5m2!1ses-419!2sar" 
+              width="600" 
+              height="450" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
             </div>
           </div>
