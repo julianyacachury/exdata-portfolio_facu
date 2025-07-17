@@ -19,6 +19,7 @@ import {
   Container,
   Share2,
   FlaskConical,
+  Puzzle,
 } from "lucide-react"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -39,6 +40,16 @@ export default function TechnologiesPage() {
           name: "Python",
           description: t("tech.python.description") || "Primary language for data science, ML, and backend",
           icon: <FileJson className="h-5 w-5 text-blue-500" />,
+        },
+        {
+          name: "C++",
+          description: t("tech.cpp.description") || "Powerful language for systems programming and high-performance applications",
+          icon: <Cpu className="h-5 w-5 text-indigo-600" />, // Representa bajo nivel / sistema
+        },
+        {
+          name: "Rust",
+          description: t("tech.rust.description") || "Memory-safe and concurrent systems programming language",
+          icon: <Puzzle className="h-5 w-5 text-orange-600" />, // Representa seguridad y robustez
         },
         {
           name: "FastAPI",
