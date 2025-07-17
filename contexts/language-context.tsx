@@ -482,8 +482,8 @@ const translations: Record<Language, TranslationKeys> = {
 
     // Technology descriptions
     "tech.python.description": "Primary language for data science, ML, and backend",
-    "tech.cpp.description": "Powerful and versatile general-purpose programming language with object-oriented features, widely used for systems programming and high-performance applications.",
-    "tech.rust.description": "Modern programming language focused on memory safety and concurrency without a garbage collector, ideal for developing efficient and reliable system-level software.",
+    "tech.cpp.description": "Powerful language for systems programming and high-performance applications",
+    "tech.rust.description": "Memory-safe and concurrent systems programming language",
     "tech.fastapi.description": "High-performance API framework",
     "tech.flask.description": "Lightweight web application framework",
     "tech.langchain.description": "Framework for LLM-powered applications",
@@ -822,8 +822,8 @@ const translations: Record<Language, TranslationKeys> = {
 
     // Technology descriptions
     "tech.python.description": "Lenguaje principal para ciencia de datos, ML y backend",
-    "tech.cpp.description": "Lenguaje de programación de propósito general, potente y versátil, con características orientadas a objetos, ampliamente utilizado en programación de sistemas y aplicaciones de alto rendimiento",
-    "tech.rust.description": "Lenguaje de programación moderno enfocado en la seguridad de memoria y la concurrencia sin utilizar recolector de basura, ideal para el desarrollo de software a nivel de sistema eficiente y confiable",
+    "tech.cpp.description": "Lenguaje potente para programación de sistemas y aplicaciones de alto rendimiento",
+    "tech.rust.description": "Lenguaje de programación de sistemas seguro en memoria y concurrente",
     "tech.fastapi.description": "Framework de API de alto rendimiento",
     "tech.flask.description": "Framework de aplicación web ligero",
     "tech.langchain.description": "Framework para aplicaciones potenciadas por LLM",
