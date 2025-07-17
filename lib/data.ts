@@ -4,7 +4,7 @@ export const projects = [
     id: "roof",
     title: "Roof Detection System",
     category: "Growth",
-    image: "/placeholder.svg?height=300&width=600",
+    image: "/Foto Techos.jpg",
     description:
       "Computer vision system for roof detection in satellite images, area measurement, and shape classification.",
     challenge:
