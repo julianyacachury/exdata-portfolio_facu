@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Phone , Github } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -130,6 +130,24 @@ export default function ContactPage() {
                       {t("contact.info.hours")}
                     </p>
                   </div>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-brand-mint/20">
+                  <Github className="h-5 w-5 text-brand-mint" />
+                </div>
+                <div>
+                  <h3 className="mb-1 font-medium text-slate-900">GitHub</h3>
+                  <p className="text-slate-600">
+                    <a
+                      href="https://github.com/exdata-co"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-blue hover:text-brand-blue-light"
+                    >
+                      github.com/exdata-co
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="rounded-lg overflow-hidden h-[300px] relative">
