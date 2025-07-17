@@ -33,7 +33,7 @@ export const projects = [
     id: "OCR",
     title: "OCR Document Processing System",
     category: "Automatization",
-    image: "/placeholder.svg?height=300&width=600",
+    image: "/OCR.jpg",
     description:
       "Our system reads .eml email files, extracts attached PDFs, and scans them for QR or barcodes using PyZbar. If valid codes are found, OCR is applied with Tesseract to extract key data. Files are then automatically renamed and organized based on the extracted information. Seamlessly integrates into your workflow to save time and reduce errors.",
     challenge:
