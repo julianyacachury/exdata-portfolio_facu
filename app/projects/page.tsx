@@ -16,9 +16,9 @@ const ProjectCarousel = () => {
   
   // Array de imágenes para el carrusel - personaliza según tus proyectos
   const images = [
-    "/Foto Techos.jpg",
-    "/Foto pharmabot.png",
-    "/OCR.jpg", 
+    "/Projects/Foto Techos.jpg",
+    "/Projects/Foto pharmabot.png",
+    "/Projects/OCR.jpg", 
     "/DICOM.jpeg"
   ]
 

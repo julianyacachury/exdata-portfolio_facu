@@ -4,7 +4,7 @@ export const projects = [
     id: "roof",
     title: "Roof Detection System",
     category: "Growth",
-    image: "/Foto Techos.jpg",
+    image: "/Projects/Foto Techos.jpg",
     description:
       "Computer vision system for roof detection in satellite images, area measurement, and shape classification.",
     challenge:
@@ -19,7 +19,7 @@ export const projects = [
     id: "pharma",
     title: "Pharmaceutical Distribution Chatbot",
     category: "Healthcare",
-    image: "/Foto pharmabot.png",
+    image: "/Projects/Foto pharmabot.png",
     description: "AI-powered chatbot for answering questions about pharmaceutical shipments and purchases.",
     challenge:
       "A pharmaceutical distributor needed to handle a high volume of customer inquiries about shipments and purchases efficiently.",
@@ -33,7 +33,7 @@ export const projects = [
     id: "OCR",
     title: "OCR Document Processing System",
     category: "Automatization",
-    image: "/OCR.jpg",
+    image: "/Projects/OCR.jpg",
     description:
       "Our system reads .eml email files, extracts attached PDFs, and scans them for QR or barcodes using PyZbar. If valid codes are found, OCR is applied with Tesseract to extract key data. Files are then automatically renamed and organized based on the extracted information. Seamlessly integrates into your workflow to save time and reduce errors.",
     challenge:
@@ -63,7 +63,7 @@ export const projects = [
   id: "DIBtoDCOM",
   title: "Custom Software and DLLs for Medical Image Conversion",
   category: "Healthcare",
-  image: "/DICOM.jpeg",
+  image: "/Projects/DICOM.jpeg",
   description:
     "We developed custom software and DLLs to convert medical images from DIB (Device Independent Bitmap) format to DCOM, ensuring compatibility with specialized healthcare imaging systems. The solution streamlines the integration of legacy image data into modern diagnostic platforms.",
   challenge:

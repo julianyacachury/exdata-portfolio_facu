@@ -1,12 +1,80 @@
 "use client"
-
-import { motion } from "framer-motion"
 import { Beaker, BookOpen, Compass, Users } from "lucide-react"
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { useLanguage } from "@/contexts/language-context"
+
+// Componente del carrusel
+const ProjectCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  
+  // Array de imágenes para el carrusel - personaliza según tus proyectos
+  const images = [
+    "/About Us/Foto about us 1.jpg",
+    "/About Us/Foto about us 2.jpg",
+    "/About Us/Foto about us 3.jpg",
+    "/About Us/Foto about us 4.jpg",
+    "/About Us/Foto about us 5.jpg",
+    "/About Us/Foto about us 6.jpg",
+    "/About Us/Foto about us 7.jpg",
+  ]
+
+  // Auto-avanzar cada 4 segundos
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length)
+    }, 4000)
+    
+    return () => clearInterval(timer)
+  }, [images.length])
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+  }
+
+  return (
+    <div className="relative h-full w-full overflow-hidden rounded-lg bg-slate-700">
+      {/* Imágenes del carrusel */}
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt={`Project visualization ${currentIndex + 1}`}
+          className="h-full w-full object-cover"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+        />
+      </AnimatePresence>
+      {/* Indicadores de puntos */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`h-2 w-2 rounded-full transition-all duration-200 ${
+              index === currentIndex ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/75'
+            }`}
+            aria-label={`Ir a imagen ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function AboutPage() {
   const { t } = useLanguage()
@@ -15,17 +83,17 @@ export default function AboutPage() {
     {
       name: "Emiliano Barone",
       role: t("team.emiliano.role"),
-      image: "/Foto Emi.jpg",
+      image: "/Team/Foto Emi.jpg",
     },
     {
       name: "Andres Tovar",
       role: t("team.andres.role"),
-      image: "/Foto Andy.png",
+      image: "/Team/Foto Andy.png",
     },
     {
       name: "Tomas Di Napolí",
       role: t("team.tomi.role"),
-      image: "/Foto Dina.jpg",
+      image: "/Team/Foto Dina.jpg",
     },
     {
       name: "Julian Yacachury",
@@ -87,7 +155,12 @@ export default function AboutPage() {
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-brand-blue to-brand-blue-light px-4 py-20 text-white md:px-6 lg:px-8">
-        <motion.div className="container mx-auto max-w-5xl" initial="hidden" animate="visible" variants={fadeInUp}>
+        <motion.div
+          className="container mx-auto max-w-5xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">{t("about.hero.title")}</h1>
@@ -100,23 +173,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 0.3, scale: 1 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
-                >
-                  <Users className="h-24 w-24 text-slate-600" />
-                </motion.div>
-              </div>
-              <motion.img
-                src="/placeholder.svg?height=400&width=600"
-                alt="Exdata team"
-                className="h-full w-full object-cover"
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.8 }}
-              />
+              <ProjectCarousel/>
             </motion.div>
           </div>
         </motion.div>

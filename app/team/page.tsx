@@ -49,7 +49,7 @@ export default function TeamPage() {
     {
       name: "Emiliano Barone",
       role: t("team.emiliano.role") || "Physicist & Hardware Specialist",
-      image: "/Foto Emi.jpg",
+      image: "/Team/Foto Emi.jpg",
       bio:
         t("team.emiliano.bio") ||
         "Physicist with 1 year of experience training ML models. Emiliano applies his strong theoretical physics background to machine learning, specializing in developing and optimizing models that incorporate statistics principles to improve performance and interpretability.",
@@ -67,7 +67,7 @@ export default function TeamPage() {
     {
       name: "Andres Tovar",
       role: t("team.andres.role") || "Physicist & Backend Developer",
-      image: "/Foto Andy.png",
+      image: "/Team/Foto Andy.png",
       bio:
         t("team.andres.bio") ||
         "Physicist and backend developer with 1 year of experience. Andres combines his knowledge with software engineering skills to build robust backend systems that power our AI applications, ensuring they're scalable, efficient, and reliable.",
@@ -85,7 +85,7 @@ export default function TeamPage() {
     {
       name: "Tomas Di Napoli",
       role: t("team.tomi.role") || "Physicist & ML Specialist",
-      image: "/Foto Dina.jpg",
+      image: "/Team/Foto Dina.jpg",
       bio:
         t("team.tomi.bio") ||
         "",
@@ -103,7 +103,7 @@ export default function TeamPage() {
     {
       name: "Julian Yacachury",
       role: t("team.yaca.role") || "Physicist",
-      image: "/Foto Yaca.jpg",
+      image: "/Team/Foto Yaca.jpg",
       bio:
         t("team.yaca.bio") ||
         "",
@@ -121,7 +121,7 @@ export default function TeamPage() {
         {
       name: "Fiorella Bernabei",
       role: t("team.fior.role") || "Community Manager",
-      image: "/Foto Fior.jpg",
+      image: "/Team/Foto Fior.jpg",
       bio:
         t("team.fior.bio") ||
         "",
