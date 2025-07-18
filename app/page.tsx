@@ -1,7 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion , AnimatePresence } from "framer-motion"
 import Link from "next/link"
+import { useState, useEffect } from "react"
 import { BarChart2, Brain, Code, Database } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -10,6 +11,74 @@ import ProjectCard from "@/components/project-card"
 import ServiceCard from "@/components/service-card"
 import { projects as projectsData } from "@/lib/data"
 import { useLanguage } from "@/contexts/language-context"
+
+// Componente del carrusel
+const ProjectCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  
+  // Array de imágenes para el carrusel - personaliza según tus proyectos
+  const images = [
+    "/About Us/Foto about us 1.jpg",
+    "/About Us/Foto about us 2.jpg",
+    "/About Us/Foto about us 3.jpg",
+    "/About Us/Foto about us 4.jpg",
+    "/About Us/Foto about us 5.jpg",
+    "/About Us/Foto about us 6.jpg",
+    "/About Us/Foto about us 7.jpg",
+  ]
+
+  // Auto-avanzar cada 4 segundos
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length)
+    }, 4000)
+    
+    return () => clearInterval(timer)
+  }, [images.length])
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+  }
+
+  return (
+    <div className="relative h-full w-full overflow-hidden rounded-lg bg-slate-700">
+      {/* Imágenes del carrusel */}
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt={`Project visualization ${currentIndex + 1}`}
+          className="h-full w-full object-cover"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+        />
+      </AnimatePresence>
+      {/* Indicadores de puntos */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`h-2 w-2 rounded-full transition-all duration-200 ${
+              index === currentIndex ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/75'
+            }`}
+            aria-label={`Ir a imagen ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function Home() {
   const { t } = useLanguage()
@@ -305,15 +374,14 @@ export default function Home() {
               >
                 <Code className="h-24 w-24 text-slate-400" />
               </motion.div>
-              <motion.img
-                src="/placeholder.svg?height=400&width=600"
-                alt="Team collaboration"
-                className="h-full w-full object-cover"
-                initial={{ scale: 1.1 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              />
+              <motion.div
+                className="relative h-[300px] overflow-hidden rounded-lg bg-slate-700 sm:h-[400px]"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
+                <ProjectCarousel/>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
