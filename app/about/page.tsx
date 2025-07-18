@@ -98,12 +98,12 @@ export default function AboutPage() {
     {
       name: "Julian Yacachury",
       role: t("team.yaca.role"),
-      image: "/Foto Yaca.jpg",
+      image: "Team/Foto Yaca.jpg",
     },
     {
       name: "Fiorella Bernabei",
       role: t("team.fior.role"),
-      image: "/Foto Fior.jpg",
+      image: "Team/Foto Fior.jpg",
     },
   ]
 
